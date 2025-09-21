@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script>
+
+        // 3 task ope new page and git data from parent
+        
         window.onload=()=>{
             const data=window.location.search.substr(1).split('&');
             const color= document.getElementById('color');
@@ -12,7 +15,6 @@
             color.innerHTML=data[0].split('=')[1];
             color.style.cssText=`color:${data[1].split('=')[1]}`;
             document.title=data[0].split('=')[1];
-
         }
     </script>
 </head>

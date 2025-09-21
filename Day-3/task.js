@@ -64,4 +64,38 @@ printChar(animationHead,textShow[0])
 }
 
 buttonCutText.addEventListener("click", OpenPageCut);
-// 3 task ope new page and git data from parent
+// Task 4 Slider Prev Next Start Stop (Set Interval & Disable)
+const btns = document.querySelectorAll(".button button");
+const img=document.getElementById("img");
+let currentImage=2;
+const srcImage = [
+  "../Images/Book.png",
+  "../Images/Boy.png",
+  "../Images/Pen.png",
+  "../Images/Girl.png"
+]
+function nextImage(){
+  currentImage++;
+if(currentImage == srcImage.length) currentImage=0;
+img.setAttribute("src",srcImage[currentImage])
+}
+function prevImage(){
+  if(currentImage == 0) currentImage=srcImage.length;
+  currentImage--;
+img.setAttribute("src",srcImage[currentImage])
+}
+function startSlider(){
+  btns[1].disabled = true;
+  sliderInterval = setInterval(function(){
+    nextImage();
+   
+  },500)
+}
+function endSlider(){
+  btns[1].disabled = false;
+  clearInterval(sliderInterval);
+}
+btns[0].addEventListener("click",prevImage);
+btns[1].addEventListener("click",startSlider);
+btns[2].addEventListener("click",endSlider);
+btns[3].addEventListener("click",nextImage);
