@@ -59,7 +59,7 @@ const nextQuestion = () => {
   checkAnswer();
   currentIndexQuestion++;
 
-  if (currentIndexQuestion >= data.questions.length ) {
+  if (currentIndexQuestion >= data.questions.length git ) {
     nextBtn.innerText = "Finish";
     confirmed = confirm("Are You Sure ?");
   }
