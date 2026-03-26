@@ -8,15 +8,17 @@ function OpenPage(pageUrl) {
   return open(pageUrl, "", "width=500,height=300");
 }
 function scrolledToEnd() {
-  if (scrolledPage.scrollY >= scrolledPage.innerHeight + 10) {
-    // Self-Stopping Interval
+  if (scrolledPage.scrollY >= scrolledPage.innerHeight + 10 ) {
     clearInterval(scrolledInterval);
     scrolledPage.close();
+    buttonScrolled.disabled = false;
   } else scrolledPage.scrollBy(0, 100);
 }
 function OpenPageScrolled() {
   // globalScope
+  buttonScrolled.disabled = true;
   scrolledPage = OpenPage("./childScroll.html");
+
   scrolledInterval = setInterval(scrolledToEnd, 300);
 }
 
@@ -51,10 +53,11 @@ function printChar(element, word) {
 function CloseCutPage(){
     clearInterval(clearCutWord);
     cutPage.close();
+    buttonCutText.disabled = false;
 }
 function OpenPageCut() {
+  buttonCutText.disabled = true;
   // globalScope
-
   cutPage = OpenPage("./childCut.html");
   cutPage.onload = () => {
     animationHead = cutPage.document.getElementById("animationHead");

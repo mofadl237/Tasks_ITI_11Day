@@ -1,0 +1,187 @@
+{
+  "userName": "Mohamed Fadl",
+  "examName": "JavaScript Basics",
+  "duration": 20,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is JavaScript?",
+      "answers": [
+        "Programming Language",
+        "Markup Language",
+        "Database",
+        "Operating System"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 2,
+      "question": "Which company developed JavaScript?",
+      "answers": [
+        "Microsoft",
+        "Netscape",
+        "Google",
+        "IBM"
+      ],
+      "correctIndex": 1,
+      "degree": 1
+    },
+    {
+      "id": 3,
+      "question": "Which keyword is used to declare a variable?",
+      "answers": [
+        "var",
+        "int",
+        "string",
+        "define"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 4,
+      "question": "What will typeof null return?",
+      "answers": [
+        "null",
+        "object",
+        "undefined",
+        "string"
+      ],
+      "correctIndex": 1,
+      "degree": 1
+    },
+    {
+      "id": 5,
+      "question": "Which method converts JSON to object?",
+      "answers": [
+        "JSON.parse()",
+        "JSON.stringify()",
+        "JSON.convert()",
+        "JSON.toObject()"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 6,
+      "question": "Which symbol is used for comments in JS?",
+      "answers": [
+        "//",
+        "<!-- -->",
+        "**",
+        "##"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 7,
+      "question": "Which function is used to print in console?",
+      "answers": [
+        "console.log()",
+        "print()",
+        "echo()",
+        "write()"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 8,
+      "question": "Which operator is used for strict equality?",
+      "answers": [
+        "==",
+        "===",
+        "=",
+        "!="
+      ],
+      "correctIndex": 1,
+      "degree": 1
+    },
+    {
+      "id": 9,
+      "question": "What does DOM stand for?",
+      "answers": [
+        "Document Object Model",
+        "Data Object Model",
+        "Digital Output Mode",
+        "Desktop Object Management"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 10,
+      "question": "Which method selects element by id?",
+      "answers": [
+        "getElementById()",
+        "querySelectorAll()",
+        "getElementsByClass()",
+        "selectById()"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 11,
+      "question": "Which loop runs at least once?",
+      "answers": [
+        "for",
+        "while",
+        "do...while",
+        "foreach"
+      ],
+      "correctIndex": 2,
+      "degree": 1
+    },
+    {
+      "id": 12,
+      "question": "What is NaN?",
+      "answers": [
+        "Not a Number",
+        "New Array Node",
+        "Null and None",
+        "Number and Null"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 13,
+      "question": "Which method adds element at end of array?",
+      "answers": [
+        "push()",
+        "pop()",
+        "shift()",
+        "unshift()"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 14,
+      "question": "Which method removes last element?",
+      "answers": [
+        "pop()",
+        "push()",
+        "shift()",
+        "slice()"
+      ],
+      "correctIndex": 0,
+      "degree": 1
+    },
+    {
+      "id": 15,
+      "question": "Which event occurs when clicking?",
+      "answers": [
+        "onchange",
+        "onhover",
+        "onclick",
+        "onload"
+      ],
+      "correctIndex": 2,
+      "degree": 1
+    }
+  ]
+}
