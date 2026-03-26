@@ -2,6 +2,7 @@
   "userName": "Mohamed Fadl",
   "examName": "JavaScript Basics",
   "duration": 20,
+  "maxDegree":15,
   "questions": [
     {
       "id": 1,
