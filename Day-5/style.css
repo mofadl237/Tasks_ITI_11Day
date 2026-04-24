@@ -1,0 +1,70 @@
+/* Reset بسيط */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* تنسيق عام */
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* الحاوية الرئيسية */
+#ImagePreview {
+    width: 80%;
+    max-width: 900px;
+}
+
+
+.headImagePreview {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* شكل الصور الصغيرة */
+.headImagePreview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* عند الـ hover */
+.headImagePreview img:hover , img.active {
+    opacity: 1;
+    transform: scale(1.05);
+    border-color: #00bcd4;
+}
+
+/* الصورة الكبيرة (body) */
+.bodyImagePreview {
+    width: 100%;
+    height: 400px;
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* الصورة الكبيرة */
+.bodyImagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.3s ease;
+}

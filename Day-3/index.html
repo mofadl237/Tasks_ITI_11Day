@@ -6,41 +6,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day-3</title>
     <style>
-        .slider{
-            width:50vw;
-            height:40vh;
-            margin:auto;
-            border:1px solid #c03b3b;
-            & .button{
-                padding:1rem;
-                display: flex;
-                justify-content: space-between;
-                & button{
-                    border-radius: .5rem;
-                    outline: none;
-                    padding:.3rem .5rem;
-                }
-            }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        img{
-            max-height: 200px;
-            
-            
+        body {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            padding: 20px;
+            color: #1e293b;
         }
         h1 {
-            background-color: blueviolet;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
             color: #FFF;
             text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         h2 {
-            cursor:pointer;
-            background-color: purple;
+            cursor: pointer;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
             color: #FFF;
             text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 30px 0 15px;
         }
-       
+        .slider {
+            width: 50vw;
+            height: 40vh;
+            margin: auto;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-height: 200px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .slider .button {
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .slider .button button {
+            flex: 1;
+            border-radius: 10px;
+            border: none;
+            padding: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            background: #e2e8f0;
+            transition: 0.3s;
+        }
+
+        #btn1 {
+            background: #f87171;
+            color: white;
+        }
+
+        #btn2 {
+            background: #22c55e;
+            color: white;
+        }
+        #btn2:disabled{
+            background: #93daad;
+        }
+
+        #btn3 {
+            background: #facc15;
+            color: black;
+        }
+
+        #btn4 {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .slider .button button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        pre {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        #page1,
+        #page2 {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            background: #0ea5e9;
+            color: white;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        #page2 {
+            background: #6366f1;
+        }
+
+        #page1:hover,
+        #page2:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5f5;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        form button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -50,16 +187,16 @@
         parent page
     </h1>
     <div class="slider">
-    <div class="image">
-        <img src="../Images/Book.png" alt="" id="img">
+        <div class="image">
+            <img src="../Images/Book.png" alt="" id="img">
+        </div>
+        <div class="button">
+            <button id="btn1">Prev</button>
+            <button id="btn2">Start</button>
+            <button id="btn3">Stop</button>
+            <button id="btn4">Next</button>
+        </div>
     </div>
-    <div class="button">
-        <button id="btn1">Prev</button>
-        <button id="btn2">Start</button>
-        <button id="btn3">Stop</button>
-        <button id="btn4">Next</button>
-    </div>
-</div>
     <pre style="background-color:red">
 
 
@@ -122,18 +259,18 @@
     <button id="page1">Scrolled</button>
     <button id="page2">Cut Words</button>
 
-<form action="./myPage.html" method="get">
-    <label for="#username">Enter userName : </label>
-    <input type="text" name="username" id="userName">
-    <select name="colorFavourite" id="">
-        <option value="red">red</option>
-        <option value="yellow">yellow</option>
-        <option value="green">green</option>
-    </select>
-    <button>Submit Data</button>
-</form>
+    <form action="./myPage.html" method="get">
+        <label for="#username">Enter userName : </label>
+        <input type="text" name="username" id="userName">
+        <select name="colorFavourite" id="">
+            <option value="red">red</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+        </select>
+        <button>Submit Data</button>
+    </form>
 
-<!-- Task Slider -->
+    <!-- Task Slider -->
     <script src="task.js"></script>
 </body>
 

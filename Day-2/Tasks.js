@@ -1,7 +1,7 @@
 /************************** 1-Convert Binary For Octal && Decimal */
 //Can Execute in Browser , Get And Validation Number from user and print this
 let numBinary = 1000101010001;
-
+// Handel Task For Browser **********************************
 // 1- check number binary or no
 function checkBinaryOrNot(num) {
   return String(num)
@@ -10,10 +10,10 @@ function checkBinaryOrNot(num) {
 }
 // console.log("Check ==> ",checkBinaryOrNot(numBinary))
 
-// 2- check number ==3 or Equevelant
+// 2- check number == 3 or Equevelant
 function FormateConvertNumber(num) {
   num = String(num).split("").reverse();
-  while (num.length % 3 != 0) {
+  while ( num.length % 3 != 0) {
     num.push("0");
   }
   return num;

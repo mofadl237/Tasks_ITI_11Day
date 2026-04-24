@@ -13,6 +13,7 @@ const score = document.querySelector(".score");
 const timer = document.querySelector(".timer");
 const myDegree = document.getElementById("my-degree");
 const maxDegree = document.getElementById("max-degree");
+// 2- variable declaration in global
 let choseElement;
 let currentIndexQuestion = 0;
 let degree = 0;
@@ -20,8 +21,9 @@ let correctAnswer = 0;
 let chosenIndex = null;
 let confirmed;
 let timerAnimation;
-//2- get data from json File
+let timerExam;
 
+//2- get data from json File
 async function getExamData() {
   const response = await fetch("data.json");
   return await response.json();
@@ -30,10 +32,12 @@ const data = await getExamData();
 // 3- Add Head Value && Check Data
 let timePerQuestion = (data.duration * 60) / data.questions.length;
 let timeOfQuestion = timePerQuestion;
+let timeExam = data.duration;
+let timeOfExam = timeExam;
 // console.log("----", data);
 username.innerText = data.userName;
 examName.innerText = data.examName;
-duration.innerText = data.duration;
+// duration.innerText = data.duration;
 showData();
 chosenFunction();
 // 4- Function
@@ -62,59 +66,6 @@ const checkAnswer = () => {
   return false;
 };
 
-
-
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    
-    return `${minutes}:${remainingSeconds}`;
-}
-timer.innerText = formatTime(timeOfQuestion);
-
-function animationFunction() {
-  timeOfQuestion--;
-  if (timeOfQuestion == 0) {
-    // clearInterval(timerAnimation);
-    chosenIndex = -1;
-    nextQuestion();
-  }
-  timer.innerText = formatTime(timeOfQuestion);
-}
-function startAnimation() {
-  clearAnimation();
-
-  timeOfQuestion = timePerQuestion;
-  timer.innerText = formatTime(timeOfQuestion);
-
-  timerAnimation = setInterval(animationFunction, 1000);
-}
-function clearAnimation() {
-  clearInterval(timerAnimation);
-  timer.innerText = formatTime(timePerQuestion);
-}
-
-const nextQuestion = () => {
-  if (chosenIndex == null) {
-    return alert("Please choose answer");
-  }
-  checkAnswer();
-
-  currentIndexQuestion++;
-
-  if (currentIndexQuestion >= data.questions.length) {
-  confirmed = confirm("Are You Sure ?");
-
-  if (confirmed) {
-    return closeExam();
-  } else {
-    currentIndexQuestion--;
-    return;
-  }
-}
-  showData();
-  chosenFunction();
-};
 function chosenFunction() {
   chosenIndex = null;
   choseElement.forEach((e, i) => {
@@ -127,18 +78,75 @@ function chosenFunction() {
     });
   });
 }
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds}`;
+}
+function animationFunction() {
+  timeOfQuestion--;
+  if (timeOfQuestion == 0) {
+    // clearInterval(timerAnimation);
+    if (chosenIndex == null) chosenIndex = -1;
+    nextQuestion();
+  }
+  timer.innerText = formatTime(timeOfQuestion);
+}
+
+function startAnimation() {
+  clearAnimation();
+  timerAnimation = setInterval(animationFunction, 1000);
+}
+function clearAnimation() {
+  clearInterval(timerAnimation);
+  timeOfQuestion = timePerQuestion;
+  timer.innerText = formatTime(timePerQuestion);
+}
+const checkEndExam = () => {
+  if (currentIndexQuestion >= data.questions.length) {
+    confirmed = confirm("Are You Sure ?");
+    if (confirmed) {
+      return closeExam();
+    } else {
+      if (checkAnswer) degree--;
+      currentIndexQuestion--;
+      return;
+    }
+  }
+};
+const nextQuestion = () => {
+  if (chosenIndex == null) {
+    return alert("Please choose answer");
+  }
+  checkAnswer();
+  currentIndexQuestion++;
+  checkEndExam();
+  showData();
+  chosenFunction();
+};
 function closeExam() {
   exam.style.cssText = "display:none";
   score.style.cssText = "display:block";
   // Add Data For Result
-  myDegree.textContent=degree;
-  maxDegree.textContent=data.maxDegree;
+  myDegree.textContent = degree;
+  maxDegree.textContent = data.maxDegree;
 }
 function openExam() {
   exam.style.cssText = "display:block";
   score.style.cssText = "display:none";
 }
-// 2- Event Click For Next Button To
+// 6- Enhance Project (Random Answer -- Timer For 20 )
+const showRandomChoose = (arr) => {
+  // Check Answer For index And Chosen index
+};
+const timerExamFunction = () => {
+  timerExam = setInterval(() => {
+    timeOfExam--;
+    duration.innerText = timeOfExam;
+  }, 60000);
+};
+timerExamFunction();
+// 7- Event Click For Next Button To
 
 nextBtn.addEventListener("click", nextQuestion);
 resetBtn.addEventListener("click", () => {
@@ -152,9 +160,11 @@ restart.addEventListener("click", () => {
   degree = 0;
   correctAnswer = 0;
   chosenIndex = null;
-confirmed=false;
+  confirmed = false;
   openExam();
   showData();
   chosenFunction();
+  timeExam=data.duration;
+  timeOfExam=timeExam;
   // window.location.reload();
 });

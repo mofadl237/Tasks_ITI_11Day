@@ -1,9 +1,10 @@
 ### Day1 
+![alt text](image-2.png)
+![alt text](image-3.png)
 # JavaScript Data Types
 تم شرح أنواع البيانات في JavaScript والفرق بين **Primitive Data Types** و **Non-Primitive Data Types**،  
-مع مثال عملي يوضح الفرق بين `number` العادي و `Number Object`.
-
 ### Day2
+![alt text](image-4.png)
 تم التدريب على JavaScript من خلال مجموعة من التمارين العملية مثل:
 - تحويل Binary إلى Octal
 - تحويل النص إلى Pascal Case
@@ -14,6 +15,7 @@
 - حساب مساحة الدائرة
 
 ### Day3
+![alt text](image-5.png)
 تم التدريب على **BOM** من خلال تنفيذ مجموعة من المهام مثل:
 - فتح صفحة جديدة وعمل Scroll تلقائي ثم غلقها
 - عرض النص حرفًا بحرف داخل نافذة جديدة
@@ -38,5 +40,11 @@
 - تحديد **درجة لكل سؤال**
 - وجود **الإجابة الصحيحة** لكل سؤال
 - وفي النهاية يتم حساب وعرض **الدرجة النهائية**
+
 ![alt text](image-1.png)
-### Day 5 - Mock Exam Task
+
+### Day 5 - Login Form 
+
+**1- Events** **regular Expression- Events** 
+
+![alt text](image-6.png)
