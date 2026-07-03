@@ -13,6 +13,8 @@
 - استخراج الحروف المميزة
 - توليد رقم عشوائي
 - حساب مساحة الدائرة
+- ![alt text](image-7.png)
+- ![alt text](image-8.png)
 
 ### Day3
 ![alt text](image-5.png)
@@ -46,5 +48,7 @@
 ### Day 5 - Login Form 
 
 **1- Events** **regular Expression- Events** 
-
+1-mouse Event (mousemove - mouseover - mouseout - click )
 ![alt text](image-6.png)
+
+### Day 6 - Login Form

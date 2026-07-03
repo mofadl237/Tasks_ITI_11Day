@@ -1,10 +1,14 @@
 /************************** 1-Convert Binary For Octal && Decimal */
 //Can Execute in Browser , Get And Validation Number from user and print this
+let inputNumberBinary = document.getElementById('binaryNumber');
+let btnConvert =  document.getElementById('btnConvert');
+let result = document.getElementById('result');
 let numBinary = 1000101010001;
 // Handel Task For Browser **********************************
+
 // 1- check number binary or no
 function checkBinaryOrNot(num) {
-  return String(num)
+    return String(num)
     .split("")
     .every((i) => i <= 1 && i >= 0);
 }
@@ -46,7 +50,12 @@ function ConvertBinaryToOctal(num) {
   }
   return convertNumber.join("");
 }
-
+function ConvertBinaryToOctalOnClick(){
+  // console.log("check");
+  numBinary = inputNumberBinary.value;
+  result.innerText =  ConvertBinaryToOctal(numBinary);
+}
+btnConvert.addEventListener("click", ConvertBinaryToOctalOnClick);
 console.log(ConvertBinaryToOctal(numBinary));
 
 /********

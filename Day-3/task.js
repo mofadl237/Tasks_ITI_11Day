@@ -15,10 +15,9 @@ function scrolledToEnd() {
   } else scrolledPage.scrollBy(0, 100);
 }
 function OpenPageScrolled() {
-  // globalScope
   buttonScrolled.disabled = true;
+  //Function عشان اوصلها من بره ال  globalScope مخليها  
   scrolledPage = OpenPage("./childScroll.html");
-
   scrolledInterval = setInterval(scrolledToEnd, 300);
 }
 

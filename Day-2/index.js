@@ -13,7 +13,7 @@
  * slice(start index ,end) Swap ,negative number 
  * 
  */
-var name = "mohamed Fadl";
+var name = "Mohamed Fadl";
 console.log(name.substr(0,4))   // "moha" ==> from index (0),length(4)
 console.log(name.substring(0,4))   // "moha" ==> from index (0),end index(4) not include 4 index 0,1,2,3
 console.log(name.slice(0,4))   // "moha" ==> from index (0),end index(4) not include 4 index 0,1,2,3,
